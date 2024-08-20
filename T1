@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Wedding Challenge Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .tracker {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tracker-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pre-Wedding Challenge Tracker</h1>
+
+<div class="form-container">
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="text" id="activity" placeholder="Describe your activity">
+    <button onclick="addActivity()">Submit</button>
+</div>
+
+<div class="tracker">
+    <h2>Activity Tracker</h2>
+    <table class="tracker-table" id="activityTable">
+        <tr>
+            <th>Name</th>
+            <th>Activity</th>
+            <th>Date</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+    function addActivity() {
+        var name = document.getElementById('name').value;
+        var activity = document.getElementById('activity').value;
+        var table = document.getElementById('activityTable');
+        var row = table.insertRow();
+        var nameCell = row.insertCell(0);
+        var activityCell = row.insertCell(1);
+        var dateCell = row.insertCell(2);
+        nameCell.innerHTML = name;
+        activityCell.innerHTML = activity;
+        dateCell.innerHTML = new Date().toLocaleDateString();
+    }
+</script>
+
+</body>
+</html>
